@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, Image, View, SafeAreaView } from "react-native";
 
 export default function App() {
+  const handlePress = () => {
+    console.log("Text Clicked");
+  };
+
+  console.log(require("./assets/icon.png"));
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      <Text numberOfLines={4} onPress={handlePress} style={{ fontSize: 30 }}>
+        This is My Love Sally!
+      </Text>
+      <Image source={require("./assets/traingirl.png")} />
+      <Image source={require("./assets/japangirl.png")} />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "pink",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
