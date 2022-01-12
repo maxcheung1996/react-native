@@ -1,47 +1,30 @@
-import { StatusBar } from "expo-status-bar";
-//import { useDimensions } from "@react-native-community/hooks";
-import {
-  StyleSheet,
-  Text,
-  Image,
-  View,
-  SafeAreaView,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  Button,
-  Alert,
-  Platform,
-  StatusBar as nativeStatusBar,
-  Dimensions,
-} from "react-native";
+import React from "react";
+import { View, StyleSheet, Image, ImageBackground } from "react-native";
 
-export default function App() {
-  const handlePress = () => {
-    alert("Text Clicked");
-  };
-
-  //console.log(useDimensions());
-
-  console.log(require("./assets/icon.png"));
+export default App = () => {
+  console.log("App Running");
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{ backgroundColor: "dodgerblue", width: "100%", height: "30%" }}
-      ></View>
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <View style={style.container}>
+      <ImageBackground
+        style={{
+          flex: 1,
+          justifyContent: "center",
+        }}
+        resizeMode="cover"
+        source={require("./assets/background.jpg")}
+      >
+        <Image
+          source={require("./assets/logo-red.png")}
+          style={{ flex: 0.5, height: "20%", width: "20%", left: 50 }}
+        />
+      </ImageBackground>
+    </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? nativeStatusBar.currentHeight : 0,
-    // alignItems: "center",
-    // justifyContent: "center",
   },
 });
