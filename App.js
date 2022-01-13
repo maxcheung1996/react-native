@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, ImageBackground } from "react-native";
+import { View, StyleSheet, Image, ImageBackground, Text } from "react-native";
 
 export default App = () => {
   console.log("App Running");
@@ -8,7 +8,7 @@ export default App = () => {
     <View style={style.container}>
       <ImageBackground
         style={{
-          flex: 1,
+          flex: 0.8,
           justifyContent: "center",
         }}
         resizeMode="cover"
@@ -16,9 +16,19 @@ export default App = () => {
       >
         <Image
           source={require("./assets/logo-red.png")}
-          style={{ flex: 0.5, height: "20%", width: "20%", left: 50 }}
+          style={{
+            height: "20%",
+            width: "30%",
+            top: "-25%",
+            left: "35%",
+          }}
         />
+        <Text style={{ top: "-25%", left: "28%" }}>
+          Sell What You Don't Need
+        </Text>
       </ImageBackground>
+      <View style={{ backgroundColor: "red", flex: 0.1 }}></View>
+      <View style={{ backgroundColor: "blue", flex: 0.1 }}></View>
     </View>
   );
 };
